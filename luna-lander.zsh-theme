@@ -24,7 +24,7 @@ function _luna_precmd () {
 	function set_prompt () {
 		precmd_update_git_vars
 
-		echo -n $'\n'$_LUNA_PROMPT$' '$(git_super_status) > $_LUNA_PROMPT_TMP_FILE
+		echo -n $'\n'$_LUNA_PROMPT$' '$(git_super_status)$(virtualenv_prompt_info)> $_LUNA_PROMPT_TMP_FILE
 		echo -n $' \n$ ' >> $_LUNA_PROMPT_TMP_FILE
 	}
 
