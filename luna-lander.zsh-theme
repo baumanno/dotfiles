@@ -1,14 +1,14 @@
-_LUNA_PROMPT="%{%{$fg[green]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg[red]%}%~%{$reset_color%}%} "
+setopt prompt_subst
 
 ZSH_THEME_GIT_PROMPT_PREFIX="on %{$fg[blue]%}git%{$reset_color%}:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}%{+%G%}"
 ZSH_THEME_GIT_PROMPT_BRANCH=""
 ZSH_THEME_GIT_PROMPT_SEPARATOR=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[green]%}%{?%G%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}%{x%G%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{y%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[cyan]%}%{+%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]?%G%}"
+
+_LUNA_PROMPT="%{%{$fg[green]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg[red]%}%~%{$reset_color%}%}"
 
 precmd_functions=("${precmd_update_git_vars:|precmd_functions}")
 chpwd_functions=("${chpwd_update_git_vars:|chpwd_functions}")
