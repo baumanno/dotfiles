@@ -1,0 +1,27 @@
+[config]
+
+# Fetch command to download the files.
+#
+# Examples:
+#   wget --limit-rate=30k -c -O %(file)s %(url)s
+#   curl --limit-rate 30K -C - -o %(file)s %(url)s
+fetch_command = wget -c -O %(file)s %(url)s
+
+# Player command to play the files
+#
+# Examples:
+#   mplayer %(file)s
+#   mpg123 %(file)s
+player_command = mplayer %(file)s
+
+# Media directory to store the files
+media_dir = ~/podcasts
+
+[podcast]
+
+# List of feeds of your podcasts, in the format:
+#   podcast_id = http://example.org/rss/feed.xml
+LogbuchNetzpolitik = http://logbuch-netzpolitik.de/feed/mp3
+Chaosradio = http://chaosradio.ccc.de/chaosradio-complete.rss
+Netzpolitik =  http://www.netzpolitik.org/category/netzpolitik-podcast/feed
+Damals = http://damals-tm-podcast.de/index.php/feed/damalstm-mp3/
