@@ -26,11 +26,17 @@ function _luna_precmd () {
 
 		echo -n $'\n'$_LUNA_PROMPT$' '$(git_super_status)$(virtualenv_prompt_info)> $_LUNA_PROMPT_TMP_FILE
 		echo -n $' \n$ ' >> $_LUNA_PROMPT_TMP_FILE
+
+		kill -s USR1 $$
 	}
 
 	set_prompt &!
-	PROMPT=$(cat $_LUNA_PROMPT_TMP_FILE)
 }
 
+function TRAPUSR1 () {
+
+	PROMPT=$(cat $_LUNA_PROMPT_TMP_FILE)
+	zle reset-prompt
+}
 
 precmd_functions+=(_luna_precmd)
