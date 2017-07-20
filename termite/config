@@ -1,0 +1,39 @@
+[options]
+# font = Inconsolata for Powerline Bold 8
+font = Inconsolata Bold 9
+
+[colors]
+background = #09303b
+foreground = #eaf3e9
+
+color0 = #181818
+
+color8 = #3a3a3a
+
+color1 = #c0276c
+
+color9 = #e376a7
+
+color2 = #6cc027
+
+color10 = #a7e376
+
+color3 = #c07b27
+
+color11 = #e3b276
+
+color4 = #276cc0
+
+color12 = #76a7e3
+
+color5 = #7b27c0
+
+color13 = #b276e3
+
+color6 = #27c07b
+
+color14 = #76e3b2
+
+color7 = #dedede
+
+color15 = #f2f2f2
