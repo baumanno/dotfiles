@@ -9,26 +9,26 @@ filetype plugin indent on
 autocmd FileType c,cpp :set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
 
 " sensible settings
-set tabstop=4		" Number of spaces that a <Tab> in the file counts for.
+set tabstop=4		    " Number of spaces that a <Tab> in the file counts for.
  
-set shiftwidth=4	" Number of spaces to use for each step of (auto)indent.
+set shiftwidth=4	    " Number of spaces to use for each step of (auto)indent.
  
-set expandtab		" Use the appropriate number of spaces to insert a <Tab>.
-	                " Spaces are used in indents with the '>' and '<' commands
-         	        " and when 'autoindent' is on. To insert a real tab when
-                  	" 'expandtab' is on, use CTRL-V <Tab>.
+set expandtab		    " Use the appropriate number of spaces to insert a <Tab>.
+	                    " Spaces are used in indents with the '>' and '<' commands
+         	            " and when 'autoindent' is on. To insert a real tab when
+                      	" 'expandtab' is on, use CTRL-V <Tab>.
  
 set smarttab        	" When on, a <Tab> in front of a line inserts blanks
-	                " according to 'shiftwidth'. 'tabstop' is used in other
-        	        " places. A <BS> will delete a 'shiftwidth' worth of space
-                	" at the start of the line.
+    	                " according to 'shiftwidth'. 'tabstop' is used in other
+            	        " places. A <BS> will delete a 'shiftwidth' worth of space
+                    	" at the start of the line.
  
 set showcmd         	" Show (partial) command in status line.
 
 set number          	" Show line numbers.
 
 set showmatch       	" When a bracket is inserted, briefly jump to the matching
-			" one. The jump is only done if the match can be seen on the
+			            " one. The jump is only done if the match can be seen on the
                     	" screen. The time to show the match can be set with
                     	" 'matchtime'.
  
@@ -88,7 +88,7 @@ set nowrap          	" Don't wrap lines
 
 set linebreak       	" Wrap lines at convenient points
 
-set colorcolumn=80 	" Set the line-end marker to 80 cols (text width 79)
+set colorcolumn=80 	    " Set the line-end marker to 80 cols (text width 79)
 
 " Turn off swap-files
 set noswapfile
