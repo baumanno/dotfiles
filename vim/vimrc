@@ -108,3 +108,7 @@ endif
 set scrolloff=5 
 set sidescrolloff=15
 set sidescroll=1
+
+" Airline
+set laststatus=2
+let g:airline_powerline_fonts=1
