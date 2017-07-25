@@ -19,3 +19,30 @@
 [submodule "vim/pack/plugins/start/nerdtree"]
 	path = vim/pack/plugins/start/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/pack/plugins/start/vim-commentary"]
+	path = vim/pack/plugins/start/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/pack/plugins/start/vim-git"]
+	path = vim/pack/plugins/start/vim-git
+	url = git://github.com/tpope/vim-git.git
+[submodule "vim/pack/plugins/start/kwbdi.vim"]
+	path = vim/pack/plugins/start/kwbdi.vim
+	url = git://github.com/vim-scripts/kwbdi.vim
+[submodule "vim/pack/plugins/start/vim-surround"]
+	path = vim/pack/plugins/start/vim-surround
+	url = git://github.com/tpope/vim-surround
+[submodule "vim/pack/plugins/start/vimtex"]
+	path = vim/pack/plugins/start/vimtex
+	url = git://github.com/lervag/vimtex
+[submodule "vim/pack/plugins/start/ctrlp.vim"]
+	path = vim/pack/plugins/start/ctrlp.vim
+	url = git://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/pack/plugins/start/neocomplete.vim"]
+	path = vim/pack/plugins/start/neocomplete.vim
+	url = git://github.com/Shougo/neocomplete.vim
+[submodule "vim/pack/plugins/start/vim-snippets"]
+	path = vim/pack/plugins/start/vim-snippets
+	url = git://github.com/honza/vim-snippets
+[submodule "vim/pack/plugins/start/vim-snipmate"]
+	path = vim/pack/plugins/start/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
