@@ -46,3 +46,9 @@
 [submodule "vim/pack/plugins/start/vim-snipmate"]
 	path = vim/pack/plugins/start/vim-snipmate
 	url = git://github.com/garbas/vim-snipmate.git
+[submodule "vim/pack/plugins/start/vim-addon-mw-utils"]
+	path = vim/pack/plugins/start/vim-addon-mw-utils
+	url = git://github.com/marcweber/vim-addon-mw-utils
+[submodule "vim/pack/plugins/start/tlib_vim"]
+	path = vim/pack/plugins/start/tlib_vim
+	url = git://github.com/tomtom/tlib_vim
