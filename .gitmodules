@@ -52,3 +52,18 @@
 [submodule "vim/pack/plugins/start/tlib_vim"]
 	path = vim/pack/plugins/start/tlib_vim
 	url = git://github.com/tomtom/tlib_vim
+[submodule "vim/pack/plugins/start/ghcmod-vim"]
+	path = vim/pack/plugins/start/ghcmod-vim
+	url = git://github.com/eagletmt/ghcmod-vim
+[submodule "vim/pack/plugins/start/neco-ghc"]
+	path = vim/pack/plugins/start/neco-ghc
+	url = git://github.com/eagletmt/neco-ghc
+[submodule "vim/pack/plugins/start/tabular"]
+	path = vim/pack/plugins/start/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/pack/plugins/start/supertab"]
+	path = vim/pack/plugins/start/supertab
+	url = git://github.com/ervandew/supertab
+[submodule "vim/pack/plugins/start/vimproc.vim"]
+	path = vim/pack/plugins/start/vimproc.vim
+	url = git://github.com/Shougo/vimproc.vim
