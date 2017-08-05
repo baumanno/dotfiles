@@ -128,8 +128,13 @@ set sidescroll=1
 set laststatus=2
 let g:airline_powerline_fonts=1
 
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+
 " Syntastic
 map <Leader>s :SyntasticToggleMode<CR>
+let g:syntastic_haskell_checkers = ['hlint', 'hdevtools']
+let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-Wall -g-Werr'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -139,3 +144,23 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" ghc-mod
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+" supertab
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<c-x><c-o>")<cr>
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" hdevtools
+
+" tabular
+let g:haskell_tabular = 1
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
