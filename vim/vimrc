@@ -126,6 +126,9 @@ set sidescroll=1
 set laststatus=2
 let g:airline_powerline_fonts=1
 
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
+
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
 
