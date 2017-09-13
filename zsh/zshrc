@@ -100,3 +100,6 @@ export PATH="$PATH:/home/oliver/.local/bin"
 
 autoload -U +X bashcompinit && bashcompinit
 eval "$(stack --bash-completion-script stack)"
+
+# load custom aliases
+. ~/dotfiles/zsh/aliases
