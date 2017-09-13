@@ -66,3 +66,5 @@
 	fetchJobs = 4
 [diff]
 	compactionHeuristic = true
+[rerere]
+	enabled = true
