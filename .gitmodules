@@ -73,3 +73,9 @@
 [submodule "vim/pack/plugins/start/vim-hdevtools"]
 	path = vim/pack/plugins/start/vim-hdevtools
 	url = git://github.com/bitc/vim-hdevtools
+[submodule "vim/pack/plugins/start/ultisnips"]
+	path = vim/pack/plugins/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "vim/pack/plugins/start/vim-markdown"]
+	path = vim/pack/plugins/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
