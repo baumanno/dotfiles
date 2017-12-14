@@ -108,6 +108,9 @@ set noswapfile
 set nobackup
 set nowb
 
+" autowrite on :make
+set autowrite
+
 " Persistent undo
 " Keeps undo history across sessions by storing in history file.
 if has('persistent_undo')
