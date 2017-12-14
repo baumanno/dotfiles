@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 exec --no-startup-id dropbox
-exec --no-startup-id redshift -l 48.1:11.6
+exec --no-startup-id redshift -c ~/.config/redshift.conf
 
 set $mod Mod4
 set $ws1 "1:"
