@@ -1,0 +1,20 @@
+* {
+    font: "Inconsolata for Powerline 18";
+    background-color: #fdf6e3;
+    border-color: White;
+    text-color: #002b36;
+}
+
+#window {
+    location: center;
+    width: 50%;
+    transparency: "screenshot";
+    border-radius: 50px;
+    padding: 25px;
+}
+
+#listview {
+    lines: 10;
+    columns: 1;
+    layout: vertical;
+}
