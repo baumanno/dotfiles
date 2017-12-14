@@ -91,7 +91,10 @@ if [[ $TERM == xterm-termite ]]; then
   __vte_osc7
 fi
 
-export _JAVA_OPTIONS="-Dsun.java2d.uiScale=2 -Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true"
+export _JAVA_OPTIONS="\
+    -Dawt.useSystemAAFontSettings=on \
+    -Dswing.aatext=true \
+    -Dsun.java2d.opengl=true"
 
 export GOPATH=~/Workspace/go
 export PATH="$PATH:$GOPATH/bin"
