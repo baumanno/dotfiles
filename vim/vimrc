@@ -125,6 +125,10 @@ set scrolloff=5
 set sidescrolloff=15
 set sidescroll=1
 
+map <C-n> :cnext<CR>
+map <C-h> :cprev<CR>
+nnoremap <leader>a :cclose<CR>
+
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -169,3 +173,10 @@ vmap a= :Tabularize /=<CR>
 vmap a: :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 vmap ac :Tabularize /--<CR>
+
+" vim-go
+let g:go_fmt_command = 'goimports'
+let g:go_metalinter_autosave = 1
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
