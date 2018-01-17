@@ -1,6 +1,7 @@
 [options]
 # font = Inconsolata for Powerline Bold 8
 font = Inconsolata Bold 9
+scrollback_lines = -1 # infinite scrollback
 
 [colors]
 background = #09303b
