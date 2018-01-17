@@ -133,11 +133,12 @@ nnoremap <leader>a :cclose<CR>
 set laststatus=2
 let g:airline_powerline_fonts=1
 
-" NERDTree
-map <F2> :NERDTreeToggle<CR>
-
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
+" YouCompleteMe
+let g:ycm_python_binary_path = 'python'
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>d :YcmCompleter GetDoc<CR>
+nnoremap <leader>r :YcmCompleter RefactorRename
 
 " Syntastic
 map <Leader>s :SyntasticToggleMode<CR>
@@ -153,30 +154,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-" ghc-mod
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
+let g:UltiSnipsExpandTrigger = '<C-Space>'
+let g:UltiSnipsJumpForwardTrigger = '<C-J>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
 
-" supertab
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-inoremap <Nul> <c-r>=SuperTabAlternateCompletion("<c-x><c-o>")<cr>
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-" hdevtools
-
-" tabular
-let g:haskell_tabular = 1
-vmap a= :Tabularize /=<CR>
-vmap a: :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
-vmap ac :Tabularize /--<CR>
-
-" vim-go
-let g:go_fmt_command = 'goimports'
-let g:go_metalinter_autosave = 1
-autocmd FileType go nmap <leader>b <Plug>(go-build)
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
+let g:ackprg = 'ag --vimgrep' " every match on line
+"let g:ackprg = 'ag --nogroup --nocolor --column'
