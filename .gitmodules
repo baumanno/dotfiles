@@ -70,3 +70,30 @@
 [submodule "vim/pack/plugins/start/vim-markdown"]
 	path = vim/pack/plugins/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "vim/pack/plugins/start/vim-vinegar"]
+	path = vim/pack/plugins/start/vim-vinegar
+	url = git://github.com/tpope/vim-vinegar.git
+[submodule "vim/pack/plugins/start/indentpython.vim"]
+	path = vim/pack/plugins/start/indentpython.vim
+	url = git://github.com/vim-scripts/indentpython.vim
+[submodule "vim/pack/plugins/start/vim-flake8"]
+	path = vim/pack/plugins/start/vim-flake8
+	url = git://github.com/nvie/vim-flake8
+[submodule "vim/pack/plugins/start/Zenburn"]
+	path = vim/pack/plugins/start/Zenburn
+	url = git://github.com/jnurmine/Zenburn
+[submodule "vim/pack/plugins/start/vim-colorschemes"]
+	path = vim/pack/plugins/start/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim/pack/plugins/start/ack.vim"]
+	path = vim/pack/plugins/start/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "vim/pack/plugins/start/neocomplete.vim"]
+	path = vim/pack/plugins/start/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/pack/plugins/start/YouCompleteMe"]
+	path = vim/pack/plugins/start/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim/pack/plugins/start/delimitMate"]
+	path = vim/pack/plugins/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate
