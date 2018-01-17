@@ -16,9 +16,6 @@
 [submodule "vim/pack/plugins/start/vim-go"]
 	path = vim/pack/plugins/start/vim-go
 	url = git://github.com/fatih/vim-go.git
-[submodule "vim/pack/plugins/start/nerdtree"]
-	path = vim/pack/plugins/start/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vim/pack/plugins/start/vim-commentary"]
 	path = vim/pack/plugins/start/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
@@ -37,9 +34,6 @@
 [submodule "vim/pack/plugins/start/ctrlp.vim"]
 	path = vim/pack/plugins/start/ctrlp.vim
 	url = git://github.com/ctrlpvim/ctrlp.vim
-[submodule "vim/pack/plugins/start/neocomplete.vim"]
-	path = vim/pack/plugins/start/neocomplete.vim
-	url = git://github.com/Shougo/neocomplete.vim
 [submodule "vim/pack/plugins/start/vim-snippets"]
 	path = vim/pack/plugins/start/vim-snippets
 	url = git://github.com/honza/vim-snippets
@@ -61,9 +55,6 @@
 [submodule "vim/pack/plugins/start/tabular"]
 	path = vim/pack/plugins/start/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "vim/pack/plugins/start/supertab"]
-	path = vim/pack/plugins/start/supertab
-	url = git://github.com/ervandew/supertab
 [submodule "vim/pack/plugins/start/vimproc.vim"]
 	path = vim/pack/plugins/start/vimproc.vim
 	url = git://github.com/Shougo/vimproc.vim
