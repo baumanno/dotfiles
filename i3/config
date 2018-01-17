@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec --no-startup-id dropbox
+# DB is now started as an online-hook in /etc/netctl/hooks
+# exec --no-startup-id dropbox
 exec --no-startup-id redshift -c ~/.config/redshift.conf
 
 set $mod Mod4
