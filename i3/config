@@ -219,4 +219,9 @@ for_window [class="Thunderbird" instance="Msgcompose"] floating enable
 for_window [class="Thunderbird" instance="Preferences"] floating enable
 for_window [class="Thunderbird" title="Thunderbird Preferences"] floating enable
 for_window [class="Pinentry"] floating enable
-for_window [title="Auto-Type - KeePassXC"] floating enable; resize set 100 100
+for_window [class="^keepassxc$" instance="^keepassxc$" title="Auto-Type - KeePassXC"] "floating enable, resize set 1000 400"
+for_window [class="^Thunderbird$" instance="^Dialog$" title="Mail Server Password Required"] resize set 800 350
+for_window [class="^Tor Browser$" instance="^Navigator$"] floating enable
+for_window [class="^tracc.py$" instance="^tracc.py$"] floating enable
+
+focus_follows_mouse no
