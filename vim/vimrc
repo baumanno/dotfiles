@@ -172,4 +172,9 @@ imap <C-l> <Plug>delimitMateS-Tab
 
 " fugitive
 nnoremap <F12> :Gstatus<CR>
+
+" Jedi
 let g:jedi#rename_command = "<leader>r"
+
+" show indent-level marker
+let g:indentLine_color_term = 241
