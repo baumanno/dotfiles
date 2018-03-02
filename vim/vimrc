@@ -172,3 +172,4 @@ imap <C-l> <Plug>delimitMateS-Tab
 
 " fugitive
 nnoremap <F12> :Gstatus<CR>
+let g:jedi#rename_command = "<leader>r"
