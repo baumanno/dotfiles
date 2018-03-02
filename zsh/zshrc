@@ -116,3 +116,16 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper.sh
 
 source /usr/share/bashmarks/bashmarks.sh
+
+function list_all() {
+    emulate -L zsh
+    ls -a
+}
+
+function auto_venv() {
+    if [[ -f .venv ]]; then
+        workon $(cat .venv);
+    fi
+}
+# chpwd_functions=(${chpwd_functions[@]} "list_all")
+chpwd_functions=(${chpwd_functions[@]} "auto_venv")
