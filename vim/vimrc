@@ -135,6 +135,7 @@ let g:airline_powerline_fonts=1
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
+let g:ycm_key_list_previous_completion = ['<C-Tab>', '<Up>']
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
