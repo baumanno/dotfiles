@@ -113,3 +113,6 @@ eval "$(stack --bash-completion-script stack)"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source /usr/bin/virtualenvwrapper.sh
+
+source /usr/share/bashmarks/bashmarks.sh
