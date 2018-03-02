@@ -97,3 +97,18 @@
 [submodule "vim/pack/plugins/start/delimitMate"]
 	path = vim/pack/plugins/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "vim/pack/plugins/start/jedi-vim"]
+	path = vim/pack/plugins/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim/
+[submodule "vim/pack/plugins/start/indentLine"]
+	path = vim/pack/plugins/start/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule "vim/pack/plugins/start/vim-multiple-cursors"]
+	path = vim/pack/plugins/start/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "vim/pack/plugins/start/vim-python-pep8-indent"]
+	path = vim/pack/plugins/start/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent
+[submodule "vim/pack/plugins/start/vim-buftabline"]
+	path = vim/pack/plugins/start/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
