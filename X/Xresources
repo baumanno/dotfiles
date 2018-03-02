@@ -9,7 +9,7 @@ Xft.rgba: rgb
 
 !Fonts
 !
-URxvt.font: xft:Inconsolata for Powerline:regular:size=9
+URxvt.font: xft:Inconsolata:regular:size=9
 URxvt.scrollBar: false
 URxvt*letterSpace: -1
 
