@@ -103,8 +103,13 @@ export PATH="$PATH:/home/oliver/.local/bin"
 
 export PATH="$PATH:/home/oliver/.gem/ruby/2.4.0/bin"
 
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
 autoload -U +X bashcompinit && bashcompinit
 eval "$(stack --bash-completion-script stack)"
 
 # load custom aliases
 . ~/dotfiles/zsh/aliases
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
