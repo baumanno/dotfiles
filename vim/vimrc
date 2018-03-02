@@ -163,3 +163,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 " Ack
 let g:ackprg = 'ag --vimgrep' " every match on line
 "let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" delimitmate
+let g:delimitMate_autoclose = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_expand_cr = 1
+imap <C-l> <Plug>delimitMateS-Tab
+
