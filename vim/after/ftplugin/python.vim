@@ -7,8 +7,10 @@ setlocal expandtab
 setlocal autoindent
 setlocal fileformat=unix
 
-"match ExtraWhitespace /\s\+$/
-
 let python_hightlight_all = 1
 
-nnoremap <leader>r <Esc>:w<CR>:!clear;python %<CR>
+nnoremap <leader>y <Esc>:w<CR>:!clear;python %<CR>
+nnoremap <leader>Y <Esc>:w<CR>:!clear;python %
+
+" clear trailing whitespace on save
+autocmd FileType python autocmd BufWritePre <buffer> %s/\s\+$//e
