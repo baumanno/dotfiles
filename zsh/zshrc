@@ -51,7 +51,7 @@ ZSH_CUSTOM=~/.zsh-custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git-prompt virtualenv workenv history-substring-search)
+plugins=(git-prompt virtualenv history-substring-search colored-man-pages common-aliases golang gpg-agent pip python sudo tmux)
 
 source $ZSH/oh-my-zsh.sh
 
