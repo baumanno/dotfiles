@@ -1,10 +1,4 @@
 configuration {
-	theme: "/home/oliver/.config/rofi/luna.rasi";
-	color-active: "#fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3";
-	color-normal: "#fdf6e3, #002b36, #eee8d5, #586e75, #eee8d5";
-	color-urgent: "#fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3";
-	color-window: "#fdf6e3, #002b36, #000000";
-	columns: 1;
 	kb-accept-entry: "Control+m,Return,KP_Enter";
 	kb-mode-next: "Shift+Right,Control+Tab,Control+odiaeresis";
 	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+j";
@@ -12,16 +6,18 @@ configuration {
 	kb-row-down: "Down,Control+n,Control+k";
 	kb-row-up: "Up,Control+p,Shift+Tab,Shift+ISO_Left_Tab,Control+l";
 	modi: "window,run,ssh,keys";
-	sidebar-mode: true;
 	threads: 2;
-	width: 50;
+	disable-history: false;
+	levenshtein-sort: false;
+	sort: false;
+	matching: "normal";
+	theme: "/home/oliver/.config/rofi/luna.rasi";
 /*	auto-select: false;*/
 /*	bw: 1;*/
 /*	case-sensitive: false;*/
 /*	click-to-exit: true;*/
 /*	combi-modi: "window,run";*/
 /*	cycle: true;*/
-/*	disable-history: false;*/
 /*	display-combi: ;*/
 /*	display-drun: ;*/
 /*	display-keys: ;*/
@@ -96,11 +92,9 @@ configuration {
 /*	kb-select-9: "Super+9";*/
 /*	kb-toggle-case-sensitivity: "grave,dead_grave";*/
 /*	kb-toggle-sort: "Alt+grave";*/
-/*	levenshtein-sort: false;*/
 /*	line-margin: 2;*/
 /*	line-padding: 1;*/
 /*	m: "-5";*/
-/*	matching: "normal";*/
 /*	me-accept-custom: "Control+MouseD1";*/
 /*	me-accept-entry: "MouseD1";*/
 /*	me-select-entry: "Mouse1";*/
@@ -121,7 +115,6 @@ configuration {
 /*	separator-style: "dash";*/
 /*	show-icons: false;*/
 /*	show-match: true;*/
-/*	sort: false;*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
 /*	terminal: "rofi-sensible-terminal";*/
