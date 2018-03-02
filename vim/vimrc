@@ -155,9 +155,11 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:UltiSnipsExpandTrigger = '<C-Space>'
-let g:UltiSnipsJumpForwardTrigger = '<C-J>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
+" Ultisnips
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
+" Ack
 let g:ackprg = 'ag --vimgrep' " every match on line
 "let g:ackprg = 'ag --nogroup --nocolor --column'
