@@ -91,6 +91,8 @@ if [[ $TERM == xterm-termite ]] && [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]
   __vte_osc7
 fi
 
+alias vim="vim --servername VIM"
+
 export _JAVA_OPTIONS="\
     -Dawt.useSystemAAFontSettings=on \
     -Dswing.aatext=true \
@@ -113,9 +115,10 @@ eval "$(stack --bash-completion-script stack)"
 
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export PROJECT_HOME=$HOME/Workspace/python
 source /usr/bin/virtualenvwrapper.sh
 
-source /usr/share/bashmarks/bashmarks.sh
+source /etc/profile.d/autojump.zsh
 
 function list_all() {
     emulate -L zsh
