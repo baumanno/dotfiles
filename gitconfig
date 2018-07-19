@@ -58,12 +58,13 @@
     mb = merge-branch
     pr = pull-request
     pb = push-branch
+    ap = add -p
 [push]
 	default = current
 [transfer]
 	fsckobjects = false
 [submodule]
-	fetchJobs = 4
+	fetchJobs = 5
 [diff]
 	compactionHeuristic = true
 [rerere]
