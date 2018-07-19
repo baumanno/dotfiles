@@ -82,9 +82,6 @@
 [submodule "vim/pack/plugins/start/Zenburn"]
 	path = vim/pack/plugins/start/Zenburn
 	url = git://github.com/jnurmine/Zenburn
-[submodule "vim/pack/plugins/start/vim-colorschemes"]
-	path = vim/pack/plugins/start/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
 [submodule "vim/pack/plugins/start/ack.vim"]
 	path = vim/pack/plugins/start/ack.vim
 	url = https://github.com/mileszs/ack.vim
@@ -112,3 +109,9 @@
 [submodule "vim/pack/plugins/start/vim-buftabline"]
 	path = vim/pack/plugins/start/vim-buftabline
 	url = https://github.com/ap/vim-buftabline
+[submodule "vim/pack/plugins/start/vim-gutentags"]
+	path = vim/pack/plugins/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim/pack/plugins/start/SimpylFold"]
+	path = vim/pack/plugins/start/SimpylFold
+	url = git@github.com:tmhedberg/SimpylFold.git
