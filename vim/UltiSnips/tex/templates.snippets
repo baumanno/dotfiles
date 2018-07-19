@@ -1,0 +1,34 @@
+snippet templ-minimal "Template: Minimal" b
+\documentclass{minimal}
+\begin{document}
+
+Hello World!${0}
+
+\end{document}
+endsnippet
+
+snippet templ-article "Template: standard article" b
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+${1}
+
+\begin{document}
+
+${0}
+
+\end{document}
+endsnippet
+
+snippet templ-report "Template: report" b
+\documentclass[a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+${1}
+
+\begin{document}
+
+${0}
+
+\end{document}
+endsnippet
