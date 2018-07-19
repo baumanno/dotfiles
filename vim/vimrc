@@ -3,7 +3,6 @@ set nocompatible
 
 set encoding=utf-8
 
-syntax on
 filetype plugin indent on
 
 " sensible settings
@@ -89,6 +88,7 @@ set nowrap          	" Don't wrap lines
 set linebreak       	" Wrap lines at convenient points
 
 set colorcolumn=80 	    " Set the line-end marker to 80 cols (text width 79)
+colorscheme zenburn
 
 set smartindent
 
@@ -128,6 +128,9 @@ set sidescroll=1
 map <C-n> :cnext<CR>
 map <C-h> :cprev<CR>
 nnoremap <leader>a :cclose<CR>
+nnoremap gb :ls<CR>:b<Space>
+
+autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.skel
 
 " Airline
 set laststatus=2
@@ -175,11 +178,21 @@ nnoremap <F12> :Gstatus<CR>
 
 " Jedi
 let g:jedi#rename_command = "<leader>r"
+let g:jedi#popup_on_dot = 0
 
 " show indent-level marker
 let g:indentLine_color_term = 241
 
 " buftabs
 set hidden
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap gn :bnext<CR>
+nnoremap gN :bprev<CR>
+
+" let g:multi_cursor_exit_from_visual_mode = 0
+"let g:multi_cursor_exit_from_insert_mode = 0
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:tex_fast = "cmMprsSvV"
+
+" simplyfold
+let g:SimpylFold_docstring_preview=1
