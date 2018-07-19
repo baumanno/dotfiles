@@ -51,6 +51,7 @@ art_filename: cover
 max_filename_length: 0
 
 plugins:
+- play
 - mbsync
 - fetchart
 - embedart
@@ -59,6 +60,8 @@ plugins:
 - discogs
 - scrub
 - chroma
+- fromfilename
+- edit
 pluginpath: []
 threaded: yes
 timeout: 5.0
@@ -91,7 +94,8 @@ sort_item: artist+ album+ disc+ track+
 sort_case_insensitive: yes
 
 paths:
-    default: $albumartist/$album%aunique{}/$track $title
+    #default: $albumartist/$album%aunique{}/$track $title
+    default: $albumartist/$album/$track $title
     singleton: $artist/$title
     albumtype:soundtrack: Soundtracks/$album/$track $title
     comp: Compilations/$album%aunique{}/$track $title
@@ -165,7 +169,7 @@ mpd:
     rating: yes
     rating_mix: 0.75
     password: ''
-id3v23: no
+id3v23: yes
 discogs:
     apikey: rAzVUQYRaoFjeBjyWuWZ
     apisecret: plxtUTqoCzwxZpqdPysCwGuBSmZNdZVy
@@ -196,4 +200,7 @@ fetchart:
     google_engine: 001442825323518660753:hrh5ch1gjzm
     fanarttv_key:
     store_source: no
-
+play:
+    command: /usr/bin/mpc add 
+    raw: yes
+    relative_to: ~/Music
