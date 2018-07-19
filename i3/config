@@ -181,6 +181,8 @@ bindsym XF86Display mode "$mode_display"
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/switch_workspace.py
 bindsym --release Print exec --no-startup-id scrot
 bindsym --release Shift+Print exec --no-startup-id scrot -s
+bindsym $mod+p exec --no-startup-id mpc toggle
+bindsym $mod+Shift+p exec --no-startup-id "notify-send \\"$(mpc current | cut -d'-' -f1)\\" \\"$(mpc current | cut -d'-' -f2 | sed 's/\s*//' - )\\" -t 2000"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -227,3 +229,6 @@ for_window [class="^Tor Browser$" instance="^Navigator$"] floating enable
 for_window [class="^tracc.py$" instance="^tracc.py$"] floating enable
 
 focus_follows_mouse no
+
+#hide_edge_borders both
+new_window pixel 1
