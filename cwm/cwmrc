@@ -1,0 +1,92 @@
+borderwidth 1
+snapdist 4
+color activeborder goldenrod1
+fontname "Inconsolata:pixelsize=14:style=bold"
+
+gap 22 0 0 0
+
+ignore conky
+
+command chromium      chromium
+command thunderbird   thunderbird
+command keepass       keepassxc
+command firefox       firefox
+command ""            true
+command "lock screen" "i3lock --color=000000"
+
+# sticky yes
+
+# toggleable
+autogroup 1 "chromium,Chromium"
+autogroup 1 "Navigator,Firefox"
+autogroup 2 "termite,Termite"
+autogroup 3 "polly,Polly"
+autogroup 3 "signal,Signal"
+
+# exclusive
+autogroup 5 "rstudio,RStudio" 
+autogroup 6 "Mail,Thunderbird"
+
+# reset all
+unbind-key all
+
+bind-key CM-Delete  "i3lock --color=000000"
+
+bind-key 4-h        window-move-left-big
+bind-key 4-l        window-move-right-big
+bind-key 4-j        window-move-down-big
+bind-key 4-k        window-move-up-big
+
+bind-key 4S-h       window-resize-left-big
+bind-key 4S-l       window-resize-right-big
+bind-key 4S-j       window-resize-down-big
+bind-key 4S-k       window-resize-up-big
+
+bind-key 4S-Left     "/home/oliver/bin/movewindow left"
+bind-key 4S-Down     "/home/oliver/bin/movewindow bottom"
+bind-key 4S-Up       "/home/oliver/bin/movewindow top"
+bind-key 4S-Right    "/home/oliver/bin/movewindow right"
+
+bind-key 4-b        window-maximize
+bind-key 4-v        window-vmaximize
+bind-key 4S-v       window-hmaximize
+
+bind-key 4-f        window-group
+
+bind-key 4-1        group-toggle-1
+bind-key 4-2        group-toggle-2
+bind-key 4-3        group-toggle-3
+bind-key 4-4        group-toggle-4
+
+bind-key 4-5        group-only-5
+bind-key 4-6        group-only-6
+bind-key 4-7        group-only-7
+bind-key 4-8        group-only-8
+bind-key 4-9        group-only-9
+
+bind-key S4-1       window-movetogroup-1
+bind-key S4-2       window-movetogroup-2
+bind-key S4-3       window-movetogroup-3
+bind-key S4-4       window-movetogroup-4
+bind-key S4-5       window-movetogroup-5
+bind-key S4-6       window-movetogroup-6
+bind-key S4-7       window-movetogroup-7
+bind-key S4-8       window-movetogroup-8
+bind-key S4-9       window-movetogroup-9
+
+bind-key S4-q       window-delete
+bind-key 4-c        window-hide
+
+bind-key M-Tab      window-cycle
+bind-key SM-Tab     window-rcycle
+bind-key S4-r       restart
+bind-key S4-e       quit
+bind-key S4-w       menu-exec-wm
+
+bind-key 4-s        menu-window
+
+bind-mouse 1        menu-window-hidden
+bind-mouse M-1      window-move
+bind-mouse 4-2      window-resize
+bind-mouse 4-1      window-raise
+bind-mouse 4-3      window-lower
