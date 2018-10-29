@@ -1,0 +1,11 @@
+BROWSER=/usr/bin/chromium
+
+alias l="/bin/ls -ltrFsA --color"
+alias ll="/bin/ls -ltrFs --color"
+alias up="cd .."
+
+alias m945="$BROWSER 'https://www.m945.de/player/'"
+alias inpr="$BROWSER 'http://www.npr.org/infiniteplayer/'"
+alias klassik="$BROWSER 'https://music.klassikradio.de/?channel=Live_on_Air'"
+alias bbc="$BROWSER 'https://www.bbc.co.uk/radio/player/bbc_world_service'"
+alias electro="$BROWSER 'https://soundcloud.com/manfred-buchner-1'"
