@@ -48,4 +48,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec i3
+# exec i3
+
+# no bell!!
+xset -b
+redshift -c ~/.config/redshift.conf &
+conky
+xbindkeys
+
+exec cwm
