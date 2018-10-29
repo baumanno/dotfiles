@@ -7,12 +7,6 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-!Fonts
-!
-URxvt.font: xft:Inconsolata:regular:size=9
-URxvt.scrollBar: false
-URxvt*letterSpace: -1
-
 ! special
 *.foreground:   #c5c8c6
 *.background:   #1d1f21

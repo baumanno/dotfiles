@@ -1,7 +1,8 @@
 [options]
 # font = Inconsolata for Powerline Bold 8
-font = Inconsolata 7
+font = Go Mono 6
 scrollback_lines = -1 # infinite scrollback
+# dynamic_title = false
 
 [colors]
 background = #09303b
