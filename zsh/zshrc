@@ -99,15 +99,6 @@ export _JAVA_OPTIONS="\
     -Dswing.aatext=true \
     -Dsun.java2d.opengl=true"
 
-export GOPATH=~/Workspace/go
-export PATH="$PATH:$GOPATH/bin"
-
-export PATH="$PATH:/home/oliver/.local/bin"
-
-export PATH="$PATH:/home/oliver/.gem/ruby/2.4.0/bin"
-
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-
 autoload -U +X bashcompinit && bashcompinit
 eval "$(stack --bash-completion-script stack)"
 

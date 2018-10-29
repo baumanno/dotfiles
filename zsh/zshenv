@@ -1,0 +1,9 @@
+export GOPATH=~/Workspace/go
+export PATH="$PATH:$GOPATH/bin"
+
+export PATH="$PATH:/home/oliver/.local/bin"
+
+export PATH="$PATH:/home/oliver/.gem/ruby/2.4.0/bin"
+
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
