@@ -1,6 +1,6 @@
 install: install-zsh install-vim install-i3 install-i3status install-x install-git \
 	 install-marrie install-mpd install-ncmpcpp install-beets install-dunst    \
-	 install-rofi install-termite
+	 install-rofi install-termite install-cwm
 
 clean:
 	rm ~/.zshrc.dotbak
@@ -25,9 +25,11 @@ install-zsh:
 	mv ~/.zshrc ~/.zshrc.dotbak
 	mv ~/.zprofile ~/.zprofile.dotbak
 	mv ~/.zsh-custom ~/.zsh-custom.dotbak
+	mv ~/.zshenv ~/.zshenv.dotbak
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
 	ln -s `pwd`/zsh/zprofile ~/.zprofile
 	ln -s `pwd`/zsh/custom ~/.zsh-custom
+	ln -s `pwd`/zsh/zshenv ~/.zshenv
 
 install-vim:
 	mv ~/.vim ~/.vim.dotbak
@@ -43,11 +45,17 @@ install-i3status:
 	mv ~/.config/i3status ~/.config/i3status.dotbak
 	ln -s `pwd`/i3status ~/.config/i3status
 
+install-cwm:
+	mv ~/.cwmrc ~/.cwmrc.dotbak
+	ln -s `pwd`/cwm/cwmrc ~/.cwmrc
+
 install-x:
 	mv ~/.xinitrc ~/.xinitrc.dotbak
 	mv ~/.Xresources ~/.Xresources.dotbak
+	mv ~/.xbindkeysrc ~/.xbindkeysrc.dotbak
 	ln -s `pwd`/X/xinitrc ~/.xinitrc
 	ln -s `pwd`/X/Xresources ~/.Xresources
+	ln -s `pwd`/X/xbindkeysrc ~/.xbindkeysrc
 
 install-git:
 	mv ~/.gitconfig ~/.gitconfig.dotbak
