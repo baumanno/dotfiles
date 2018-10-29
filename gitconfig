@@ -55,10 +55,8 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
     unstage = reset HEAD
-    mb = merge-branch
-    pr = pull-request
-    pb = push-branch
     ap = add -p
+	la = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [push]
 	default = current
 [transfer]
