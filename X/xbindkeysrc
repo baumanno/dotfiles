@@ -1,0 +1,52 @@
+"xbindkeys_show"
+    Control+Shift + q
+
+#"rofi -run-command \"/bin/zsh -i -c '{cmd}'\" -show run"
+"rofi -show run"
+    Mod4+Shift + d
+
+#"urxvt -geometry 85x24"
+"termite"
+    Mod4 + Return
+
+"mpc toggle"
+    Mod4 + space
+
+"mpc next"
+    Mod4 + period
+
+"mpc prev"
+    Mod4 + comma
+
+"pactl set-sink-volume 0 -5%"
+    XF86AudioLowerVolume
+
+"pactl set-sink-volume 0 +5%"
+    XF86AudioRaiseVolume
+
+"pactl set-sink-mute 0 toggle"
+    XF86AudioMute
+
+"xbacklight -inc 5%"
+    XF86MonBrightnessUp
+
+"xbacklight -dec 5%"
+    XF86MonBrightnessDown
+
+"ssh-add -D; /usr/bin/amixer set Master mute; /usr/bin/i3lock --color=000000; systemctl hibernate"
+    XF86Bluetooth
+
+"ssh-add -D; /usr/bin/amixer set Master mute; /usr/bin/i3lock --color=000000; systemctl suspend"
+    XF86Tools
+
+"ssh-add -D; systemctl reboot"
+    Control+Mod4 + F11
+
+"ssh-add -D; systemctl poweroff"
+    Control+Mod4 + F12
+
+"scrot -s"
+    Alt + Print
+
+"scrot"
+    Print
