@@ -196,3 +196,10 @@ let g:tex_fast = "cmMprsSvV"
 
 " simplyfold
 let g:SimpylFold_docstring_preview=1
+
+nnoremap - ddp
+nnoremap _ ddkP
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader><space> viw<esc>a <esc>Bi <esc>lel
