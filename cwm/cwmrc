@@ -1,7 +1,7 @@
 borderwidth 1
 snapdist 4
 color activeborder goldenrod1
-fontname "Inconsolata:pixelsize=14:style=bold"
+fontname "Inconsolata:pixelsize=24"
 
 gap 22 0 0 0
 
