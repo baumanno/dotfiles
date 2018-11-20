@@ -14,7 +14,7 @@ command firefox       firefox
 command ""            true
 command "lock screen" "i3lock --color=000000"
 
-# sticky yes
+sticky yes
 
 # toggleable
 autogroup 1 "chromium,Chromium"
