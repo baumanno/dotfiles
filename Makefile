@@ -1,6 +1,19 @@
-install: install-zsh install-vim install-i3 install-i3status install-x install-git \
-	 install-marrie install-mpd install-ncmpcpp install-beets install-dunst    \
-	 install-rofi install-termite install-cwm
+CONFIGDIR := ~/$(CONFIGDIR)
+
+install: install-zsh \
+		 install-vim \
+		 install-i3 \
+		 install-i3status \
+		 install-x install-git \
+	 	 install-marrie \
+		 install-mpd \
+		 install-ncmpcpp \
+		 install-beets \
+		 install-dunst \
+		 install-rofi \
+		 install-termite \
+		 install-cwm \
+		 install-conky
 
 clean:
 	rm ~/.zshrc.dotbak
@@ -20,6 +33,7 @@ clean:
 	rm -r ~/.config/dunst.dotbak
 	rm -r ~/.config/rofi.dotbak
 	rm -r ~/.config/termite.dotbak
+	-rm -r ~/$(CONFIGDIR)/conky.dotbak
 
 install-zsh:
 	mv ~/.zshrc ~/.zshrc.dotbak
@@ -88,3 +102,8 @@ install-rofi:
 install-termite:
 	mv ~/.config/termite ~/.config/termite.dotbak
 	ln -s `pwd`/termite ~/.config/termite
+
+install-conky:
+	-mv ~/$(CONFIGDIR)/conky ~/$(CONFIGDIR)/conky.dotbak
+	mkdir -p ~/$(CONFIGDIR)/conky
+	ln -s `pwd`/conky/conky.conf ~/$(CONFIGDIR)/conky/conky.conf
