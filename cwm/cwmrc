@@ -22,10 +22,10 @@ autogroup 1 "Navigator,Firefox"
 autogroup 2 "termite,Termite"
 autogroup 3 "polly,Polly"
 autogroup 3 "signal,Signal"
+autogroup 4 "Mail,Thunderbird"
 
 # exclusive
 autogroup 5 "rstudio,RStudio" 
-autogroup 6 "Mail,Thunderbird"
 
 # reset all
 unbind-key all
