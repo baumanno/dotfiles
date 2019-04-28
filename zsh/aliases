@@ -10,3 +10,7 @@ alias klassik="$BROWSER 'https://music.klassikradio.de/?channel=Live_on_Air'"
 alias brklassik="$BROWSER 'https://www.br-klassik.de/index.html'"
 alias bbc="$BROWSER 'https://www.bbc.co.uk/radio/player/bbc_world_service'"
 alias electro="$BROWSER 'https://soundcloud.com/manfred-buchner-1'"
+
+gather() {
+    wmctrl -r "$1" -e 0,0,0,-1,-1;
+}
