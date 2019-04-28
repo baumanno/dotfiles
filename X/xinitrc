@@ -52,8 +52,11 @@ fi
 
 # no bell!!
 xset -b
-redshift -c ~/.config/redshift.conf &
-conky
-xbindkeys
+hash redshift && redshift -c ~/.config/redshift.conf &
+hash firefox && firefox &
+hash stalonetray && stalonetray &
+conky &
+xbindkeys &
 
+# exec dwm
 exec cwm
