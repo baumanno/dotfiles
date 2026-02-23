@@ -1,0 +1,291 @@
+#+hugo_base_dir: ~/vault/P__personal/40-49__coding/42__baumanno.de/
+#+hugo_section: dots
+#+hugo_auto_set_lastmod: t
+#+hugo_tags: email hacking
+#+hugo_categories: emacs
+#+hugo_custom_front_matter: :license ""
+
+#+title: kitty config
+#+author: Oliver Baumann
+#+email: o@baumanno.de
+#+language: en
+#+options: ':t toc:nil num:t author:t email:t
+#+startup: content indent
+#+macro: last-exported-at (eval (format-time-string "%F %T %z"))
+#+macro: word-count (eval (count-words (point-min) (point-max)))
+#+property: header-args :padline no :tangle "kitty/.config/kitty/kitty.conf" :mkdirp yes
+
+Last revised and exported on *{{{last-exported-at}}}* with a word count of *{{{word-count}}}*.
+
+#+toc: headlines 8 insert TOC here, with eight headline levels
+
+For a long time, I left my =kitty.conf= largely unmodified, save for
+font and colour scheme.  I figured that, since I spend a lot of time
+either actively in a terminal, or rely on output generated from one,
+I'd look into what kitty has on offer.
+
+Of all these options, the one that truly showed me why reading
+man-pages pays dividends is ~notify_on_cmd_finish~ (c.f. [[id:7056ecde-4f01-41c5-868d-17fcd22f6a3e][Notifications
+for long-running processes]]).
+
+* Font settings
+:PROPERTIES:
+:ID:       5bde9f13-6905-4064-8003-e054298e5341
+:END:
+
+Using Prot's =Aporetic= fonts in Emacs, I thought I'd give them a try in
+the terminal as well. So far, they look nice, but readability for the
+tiny information-chunks that terminals often contain could be better.
+
+I'm going to run with this for a while (<2026-02-15 Sun>) and see how
+it performs.
+
+#+begin_src conf 
+font_family family="Aporetic Serif Mono"
+bold_font family="Aporetic Sans Mono Bold"
+italic_font auto
+bold_italic_font auto
+font_size 12.5
+disable_ligatures cursor
+undercurl_style thin-sparse
+text_composition_strategy 0.7 50
+text_fg_override_threshold 4.5 ratio
+#+end_src
+
+* Theme
+:PROPERTIES:
+:ID:       bb9daf68-1e50-4b57-8129-a0159b94e14a
+:END:
+
+** Cursor
+:PROPERTIES:
+:ID:       d3509540-867b-404b-86d6-b16d5a35838c
+:END:
+
+#+begin_src conf
+cursor none
+#+end_src
+** Solarized
+:PROPERTIES:
+:ID:       d6c14518-9b7b-46d5-9e3d-18cf8fa81ee0
+:END:
+For some reason, I prefer lighter colour scheme over the omnipresent
+dark mode. Especially in lighter environments, it's much more pleasing
+to work with than having to squint at light text on dark background.
+
+I can't really remember where I got these colour definitions from; I
+didn't tune them myself, that's for sure.
+
+#+begin_src conf :tangle "kitty/.config/kitty/solarized.conf"
+background            #fdf6e3
+foreground            #52676f
+cursor                #52676f
+selection_background  #e9e2cb
+color0                #e4e4e4
+color8                #ffffd7
+color1                #d70000
+color9                #d75f00
+color2                #5f8700
+color10               #585858
+color3                #af8700
+color11               #626262
+color4                #0087ff
+color12               #808080
+color5                #af005f
+color13               #5f5faf
+color6                #00afaf
+color14               #8a8a8a
+color7                #262626
+color15               #1c1c1c
+selection_foreground  #fcf4dc
+#+end_src
+
+#+begin_src conf
+include ~/.config/kitty/solarized.conf
+#+end_src
+
+#+begin_src conf
+map f6 set_colors --configured ~/.config/kitty/modus-vivendi-tinted.conf
+#+end_src
+
+* Scrollback
+:PROPERTIES:
+:ID:       acc0709f-5583-48bc-99eb-76edf33c409c
+:END:
+~scrollback_page_history_size~ is set to 50 MB, roughly 500 000 lines at
+100 chars per line pure ASCII.
+
+#+begin_src conf
+scrollback_lines 4000
+scrollback_pager_history_size 50
+#+end_src
+
+* Mouse behaviour
+:PROPERTIES:
+:ID:       aade75bf-ce02-412c-8260-3eb5fe943b7f
+:END:
+
+I don't want the mouse cursor to hide, because it always results in
+tickling the touchpad to activate it again and orient.
+
+I also want focus to follow the mouse, as that is what i3 does anyway,
+and the times I have assumed this to be the case and found myself
+typing =Ctrl-C= in the wrong place are uncountable.
+
+#+begin_src conf
+mouse_hide_wait -1
+url_style dotted
+clear_selection_on_clipboard_loss yes
+strip_trailing_spaces smart
+focus_follows_mouse yes
+#+end_src
+
+* Performance tuning
+:PROPERTIES:
+:ID:       726c5d6b-adf2-494b-aa9b-e11805f34306
+:END:
+#+begin_src conf
+repaint_delay 20
+input_delay 1
+sync_to_monitor no
+#+end_src
+
+* Terminal Bell
+:PROPERTIES:
+:ID:       d48099e1-0f1e-481b-bc1c-257e36ae1c44
+:END:
+#+begin_src conf
+enable_audio_bell no
+visual_bell_duration 3.0 ease-in linear
+#+end_src
+
+* Windows
+:PROPERTIES:
+:ID:       f578f592-5b02-426f-83c8-a8344f0b2b3b
+:END:
+
+Setting the text in the inactive window to slightly transparent is
+really all it takes to separate content meaningfully. I still like the
+border for now, but that will probably be made even less obtrusive.
+
+#+begin_src conf
+window_border_width 1px
+window_margin_width 0
+window_padding_width 0
+inactive_text_alpha 0.8
+hide_window_decorations titlebar-and-corners
+#+end_src
+* Window management
+:PROPERTIES:
+:ID:       ad6bcb19-f775-495d-ab0a-10a9886d6cb3
+:END:
+
+Create a new window splitting the space used by the existing one so
+that the two windows are placed one above the other.
+
+#+begin_src conf
+map ctrl+x>2 launch --location=hsplit --cwd=current
+#+end_src
+
+Create a new window splitting the space used by the existing one so that
+the two windows are placed side by side.
+
+#+begin_src conf
+map ctrl+x>3 launch --location=vsplit --cwd=current
+#+end_src
+
+Create a new window splitting the space used by the existing one so that
+the two windows are placed side by side if the existing window is wide or
+one above the other if the existing window is tall.
+
+#+begin_src conf
+map ctrl+x>4 launch --location=split --cwd=current
+#+end_src
+
+Rotate the current split, changing its split axis from vertical to
+horizontal or vice versa.
+
+#+begin_src conf
+map ctrl+x>5 layout_action rotate
+#+end_src
+
+Move the active window in the indicated direction.
+
+#+begin_src conf
+map shift+up move_window up
+map shift+left move_window left
+map shift+right move_window right
+map shift+down move_window down
+#+end_src
+
+Move the active window to the indicated screen edge.
+
+#+begin_src conf
+map ctrl+shift+up layout_action move_to_screen_edge top
+map ctrl+shift+left layout_action move_to_screen_edge left
+map ctrl+shift+right layout_action move_to_screen_edge right
+map ctrl+shift+down layout_action move_to_screen_edge bottom
+#+end_src
+
+Switch focus to the neighboring window in the indicated direction.
+#+begin_src conf
+map ctrl+left neighboring_window left
+map ctrl+right neighboring_window right
+map ctrl+up neighboring_window up
+map ctrl+down neighboring_window down
+#+end_src
+
+Set the bias of the split containing the currently focused window. The
+currently focused window will take up the specified percent of its parent
+window's size.
+
+#+begin_src conf
+map ctrl+. layout_action bias 80
+#+end_src
+
+* Key bindings
+:PROPERTIES:
+:ID:       85f3760b-d83b-4bad-a470-b7980348bbcd
+:END:
+
+#+begin_src conf
+map ctrl+shift+f5 load_config_file
+#+end_src
+
+** Scrolling
+:PROPERTIES:
+:ID:       7c4b1f4f-4810-453f-8f2c-c2e9a23c8293
+:END:
+
+I'm leaving these here, because I didn't know about them and likely will forget they exist.
+
+#+begin_src conf
+map ctrl+shift+z scroll_to_prompt -1
+map ctrl+shift+x scroll_to_prompt 1
+map ctrl+shift+h show_scrollback
+map f1 launch --stdin-source=@screen_scrollback --stdin-add-formatting --type=overlay less +G -RAW-CONTROL-CHARS
+#+end_src
+
+* Advanced config
+:PROPERTIES:
+:ID:       53531525-e0a5-4f77-83b2-a1ddf465b68c
+:END:
+#+begin_src conf
+update_check_interval 0
+#+end_src
+
+** Notifications for long-running processes
+:PROPERTIES:
+:ID:       7056ecde-4f01-41c5-868d-17fcd22f6a3e
+:END:
+
+This is a feature I didn't even know kitty had! I was thinking about
+wiring up something myself, in order to avoid the constant polling of
+long-running commands. Setting this to =unfocused= will now alert me
+whenever I'm not consciously watching the termin, perhaps because I'm
+in a 50:50 split, hacking away at something, and waiting for a
+compilation to finish.
+
+#+begin_src conf
+notify_on_cmd_finish unfocused 10 notify focus
+#+end_src
