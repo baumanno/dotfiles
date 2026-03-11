@@ -1,0 +1,110 @@
+#+title: The global gitignore
+#+PROPERTY: header-args :tangle git/.config/git/ignore
+
+#+begin_src conf
+# -*- mode: gitignore; -*-
+#+end_src
+
+* General files and folders to ignore
+:PROPERTIES:
+:ID:       74119f51-d108-4a03-95ea-1b15d663cd3f
+:END:
+
+** VIM/Emacs tags files
+:PROPERTIES:
+:ID:       5e5279f3-af9e-474a-96e4-8c02b991da03
+:END:
+
+#+begin_src conf
+/tags
+/TAGS
+#+end_src
+
+* Emacs-specific files
+:PROPERTIES:
+:ID:       517a81f6-62bf-4444-aa23-acebb61c74c6
+:END:
+
+#+begin_src conf
+# Backup files
+,*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+,*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+,*_archive
+
+# flymake-mode
+,*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+,*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+# network security
+/network-security.data
+
+# undo-tree
+,*.~undo-tree~
+
+#+end_src
+
+* Elisp
+:PROPERTIES:
+:ID:       294a8300-edc1-44fb-9f15-c131d9e30775
+:END:
+
+#+begin_src conf
+# Packaging
+.cask/
+.eask/
+.eldev/
+.keg/
+
+# Built distribution
+dist/
+#+end_src
+
+* R
+:PROPERTIES:
+:ID:       ae3b95d5-81f0-4f44-8535-52f9860808db
+:END:
+#+begin_src conf
+.Rproj.user
+.Rhistory
+.RData
+.httr-oauth
+.DS_Store
+.quarto
+#+end_src

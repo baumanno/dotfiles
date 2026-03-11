@@ -1,0 +1,77 @@
+[user]
+    email = oliver.baumann@uni-bayreuth.de
+    name = Oliver Baumann
+[color]
+    ui = auto
+[credential]
+    helper = cache
+[core]
+    editor = ~/bin/baumacsclient
+    excludesfile = ~/.config/git/ignore
+    attributesfile = ~/.config/git/attributes
+[alias]
+    # Discard duplicate leading "git" (e.g., "git git status")
+    git = "!git"
+    s = status
+    dc = diff --cached
+    ap = add -p
+    cim = commit -m
+    amend = commit --amend --no-edit
+    force = push --force-with-lease
+    ci = commit
+    co = checkout
+    com = checkout main
+    wip = commit --message="WIP" -n
+    ri = rebase --interactive
+    rc = rebase --continue
+    ra = rebase --abort
+    rs = rebase --skip
+    re = rebase --exit
+    rod = rebase origin/develop
+    rom = rebase origin/main
+    rb = "!sh -c \"git rebase --interactive HEAD~$1\""
+    abort = checkout -- .
+    wait = reset HEAD
+    undo = reset --soft HEAD^
+    changes = diff --name-status
+    lg = log --pretty=oneline --abbrev-commit --graph --decorate
+    aliases = ! git  config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ = \\ /
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+[pull]
+    rebase = true
+[diff]
+    renames = true
+    mnemonicprefix = true
+    compactionHeuristic = true
+    algorithm = histogram
+    colorMoved = plain
+[rebase]
+    autoStash = true
+    autoSquash = true
+    updateRefs = true
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[init]
+    defaultBranch = main
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[help]
+    autocorrect = prompt
+[commit]
+    verbose = true
+    enabled = true
+    autoupdate = true
+[merge]
+    conflictstyle = zdiff3
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

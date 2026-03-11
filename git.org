@@ -1,0 +1,460 @@
+#+title: Git config
+#+PROPERTY: header-args :tangle git/.gitconfig :comments no :padline no
+
+* The ~user~ section
+:PROPERTIES:
+:ID:       c290b83f-3630-47da-80df-47afb768a32b
+:END:
+
+#+begin_src conf
+[user]
+#+end_src
+
+On my work machine, I want all commits to originate from my
+institutional address.
+
+#+begin_src conf
+    email = oliver.baumann@uni-bayreuth.de
+    name = Oliver Baumann
+#+end_src
+
+* The ~color~ section
+:PROPERTIES:
+:ID:       fc9aad60-34bd-4f04-9618-332d329b7861
+:END:
+
+#+begin_src conf
+[color]
+    ui = auto
+#+end_src
+
+* The ~credential~ section
+:PROPERTIES:
+:ID:       25578fe5-72eb-4b89-802d-cf78a381fc1c
+:END:
+
+#+begin_src conf
+[credential]
+#+end_src
+
+I have no clue what this actually does.
+TODO: figure this out.
+
+#+begin_src conf
+    helper = cache
+#+end_src
+
+* The ~core~ section
+:PROPERTIES:
+:ID:       d2e09aed-4399-4269-beaf-d0c0ff72c22a
+:END:
+
+#+begin_src conf
+[core]
+#+end_src
+
+I want =Emacs= to intercept anything that requires editing, such as
+commits or rebase logs. The wrapper ~baumacsclient~ spins off an Emacs
+client if it exists, or boots Emacs.
+
+#+begin_src conf
+    editor = ~/bin/baumacsclient
+    excludesfile = ~/.config/git/ignore
+    attributesfile = ~/.config/git/attributes
+#+end_src
+
+* The ~alias~ section
+:PROPERTIES:
+:ID:       2debba12-34e8-4e86-9fc9-d0bc8eb546c8
+:END:
+
+#+begin_src conf
+[alias]
+    # Discard duplicate leading "git" (e.g., "git git status")
+    git = "!git"
+#+end_src
+
+These days, I try to mostly use ~magit~ from within Emacs, but
+occasionally muscle memory wins and I drop to a shell. I've used these
+aliases for about 15 years now, and frequently forget the command
+they're actually aliasing.
+
+** The A-Team
+:PROPERTIES:
+:ID:       fcb17673-a1dc-4841-8610-5dcaf13d2e08
+:END:
+
+These are the aliases I use the most. They're so deep in muscle memory
+that I often type them on remote systems not blessed by my dotfiles
+yet. I'm always a bit stumped when git tells me it doesn't know the command `s`...
+
+#+begin_src conf
+    s = status
+    dc = diff --cached
+    ap = add -p
+    cim = commit -m
+    amend = commit --amend --no-edit
+    force = push --force-with-lease
+    ci = commit
+    co = checkout
+    com = checkout main
+    wip = commit --message="WIP" -n
+#+end_src
+
+** Rebase-related aliases
+:PROPERTIES:
+:ID:       fd2f896c-68a2-4b15-a971-c45e2ae907a0
+:END:
+
+I enjoy rebasing, and it's a tool I turn to very frequently.
+
+Before pushing a bunch of sloppy commits, I'll usually fire up a
+rebase session and squash or fixup particularly offending
+candidates. This not only keeps related changes in atomic commits, it
+also makes for a nicer commit history.
+
+The same holds for pulling in changes from other branches: I greatly
+prefer rebase to merge-histories. Partly because I never quite got the
+hang of the parent-syntax, partly because undoing merges is a pain,
+and largely because I prefer a nice, linear history of changes.
+
+#+begin_src conf
+    ri = rebase --interactive
+    rc = rebase --continue
+    ra = rebase --abort
+    rs = rebase --skip
+    re = rebase --exit
+    rod = rebase origin/develop
+    rom = rebase origin/main
+#+end_src
+
+This one I'm particularly fond of: just specify the number of commits
+below =HEAD= to rebase. For instance, =git rb 4= will drop into a rebase
+of the last four commits.
+
+This is the one I'll use to fix up my local commits before pushing:
+quickly go through a =git log= to find the number of commits, then
+squash or reword, push, done.
+
+#+begin_src conf
+    rb = "!sh -c \"git rebase --interactive HEAD~$1\""
+#+end_src
+
+** Mistake-related aliases
+:PROPERTIES:
+:ID:       184cbe18-92d3-4200-aa37-8704274a6792
+:END:
+
+Granted, since git introduced the new command pallette and made it the
+default, these are less useful, but I keep them for nostalgia.
+
+#+begin_src conf
+    abort = checkout -- .
+    wait = reset HEAD
+    undo = reset --soft HEAD^
+#+end_src
+
+** Diff-related aliases
+:PROPERTIES:
+:ID:       fae8a990-0cd0-43fd-baf4-278e6676162b
+:END:
+
+#+begin_src conf
+    changes = diff --name-status
+#+end_src
+
+
+** Log-related aliases
+:PROPERTIES:
+:ID:       9003658d-6b43-41e2-ab38-0692da304734
+:END:
+
+I find the default =log= output notoriously inefficient. Usually, I want
+to eyeball the summaries and find suitable candidates, and then I'll
+=git show= the commit(s) I'm interested in.
+
+#+begin_src conf
+    lg = log --pretty=oneline --abbrev-commit --graph --decorate
+#+end_src
+
+** Alias-related alias
+:PROPERTIES:
+:ID:       60bee3bf-702e-449b-b1b6-3677ae10c474
+:END:
+
+It does happen that I either forget how an alias is spelled out, or
+forget about its existence. This command let's me review the aliases
+without having to context-switch.
+
+#+begin_src conf
+    aliases = ! git  config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ = \\ /
+#+end_src
+
+* The ~push~ section
+:PROPERTIES:
+:ID:       6f53c7ec-0e28-438f-8600-e135503fa3e0
+:END:
+
+#+begin_src conf
+[push]
+#+end_src
+
+These are just sane defaults.
+
+#+begin_src conf
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+#+end_src
+
+
+
+* The ~pull~ section
+:PROPERTIES:
+:ID:       ce57e4d4-3a20-4673-af7a-36e7fb8ddb74
+:END:
+
+#+begin_src conf
+[pull]
+#+end_src
+
+Did I mention that [[id:fd2f896c-68a2-4b15-a971-c45e2ae907a0][I love]] [[id:3bb6a981-d725-472a-9acd-563d085d413f][rebasing]]?
+
+This will make =git pull= do a rebase instead of a merge, so topic
+branches don't contain interim merge-commits where you either wanted
+to test the final merge back into =main=, or needed an update from there.
+
+#+begin_src conf
+    rebase = true
+#+end_src
+
+* The ~diff~ section
+:PROPERTIES:
+:ID:       157957d9-1287-4bef-b8ce-0ac2c541e455
+:END:
+
+#+begin_src conf
+[diff]
+    renames = true
+    mnemonicprefix = true
+    compactionHeuristic = true
+    algorithm = histogram
+    colorMoved = plain
+#+end_src
+
+
+* The ~rebase~ section
+:PROPERTIES:
+:ID:       3bb6a981-d725-472a-9acd-563d085d413f
+:END:
+
+I mentioned in the [[id:fd2f896c-68a2-4b15-a971-c45e2ae907a0][section on rebase-related aliases]] that I enjoy
+rebasing /a lot/.
+
+#+begin_src conf
+[rebase]
+    autoStash = true
+#+end_src
+
+=autoSquash= takes specially formatted commits and sets the rebase
+action on them. If a commit starts with =squash!=, =fixup!= or =amend!=,
+followed by a specificier, git will match the specifier to previous
+commits. The specifier can be a commit hash, or the (beginning of a)
+title of a previous commit.
+
+This nifty setting will pre-set the rebase action to =squash=, =fixup=, or
+=fixup -C=, respectively, and can make rebasing a lot faster.
+
+The easiest way to create these special commits is not by hand, but by
+passing =--squash=, =--fixup=, =--fixup=amend:= or =--fixup=reword:= to =git commit=.
+
+#+begin_src conf
+    autoSquash = true
+#+end_src
+
+Automatically force-update any rebased refs.
+
+#+begin_src conf
+    updateRefs = true
+#+end_src
+
+* The ~branch~ section
+:PROPERTIES:
+:ID:       76b49b03-1b94-4d4f-819f-cfae57f5d3de
+:END:
+#+begin_src conf
+[branch]
+#+end_src
+
+I like seeing branches with recent changes at the top, as these are
+usually the ones I'm interested in.
+
+#+begin_src conf
+    sort = -committerdate
+#+end_src
+
+
+* The ~tag~ section
+:PROPERTIES:
+:ID:       935a8d7a-fb0d-4e0e-981b-cc12992651cb
+:END:
+
+#+begin_src conf
+[tag]
+#+end_src
+
+Similary to [[id:76b49b03-1b94-4d4f-819f-cfae57f5d3de][sorting branches]], I like to treat tags as versions, and
+sort in ascending order; since tags can be plentiful, causing the
+terminal to scroll, this setting gives me the most recent version at
+the very end.
+
+#+begin_src conf
+    sort = version:refname
+#+end_src
+
+* The ~init~ section
+:PROPERTIES:
+:ID:       dd3718e3-ce47-4c94-af96-7efabd76d878
+:END:
+
+#+begin_src conf
+[init]
+#+end_src
+
+I remember when inclusive language started making its way into
+software tooling. It's left quite a profound mark on how I read and
+write code and code-adjacent material.
+
+#+begin_src conf
+    defaultBranch = main
+#+end_src
+
+
+* The ~fetch~ section
+:PROPERTIES:
+:ID:       d5a9ce68-8fe2-467f-a941-0efc36caa14a
+:END:
+
+#+begin_src conf
+[fetch]
+#+end_src
+
+Just another bunch of sane and (I guess?!) harmless defaults.  the
+=prune*= settings delete tracked branches or local tags that no longer
+exist on the remote, making some repo operations faster and keeping
+everything a bit more tidy.
+
+#+begin_src conf
+    prune = true
+    pruneTags = true
+    all = true
+#+end_src
+
+
+* The ~help~ section
+:PROPERTIES:
+:ID:       63511a52-3229-4cea-9744-aee43f5f1ab1
+:END:
+
+#+begin_src conf
+[help]
+#+end_src
+
+This setting will cause git to prompt with a "Did you mean XY" when
+mistyping a command. Nice and occasionally useful, but somehow just
+=C-c= and retyping is often faster.
+
+#+begin_src conf
+    autocorrect = prompt
+#+end_src
+
+
+* The ~commit~ section
+:PROPERTIES:
+:ID:       33b2721b-06a5-4252-a6b5-931f33b871cf
+:END:
+
+#+begin_src conf
+[commit]
+#+end_src
+
+I literally have no clue what this does.
+
+#+begin_src conf
+    verbose = true
+#+end_src
+
+
+* The ~rerere~ section
+:PROPERTIES:
+:ID:       f4afa833-f59b-4eb0-af1b-3f6bc6186c87
+:END:
+
+Reuse recorded resolutions is a damn nifty feature when you're
+rebasing a long-lived branch and are faced with fixing the same
+conflicts over and over again.
+
+It will make git record how a merge- or rebase-conflict was resolved,
+and silently re-apply it the next time it occurs.
+
+Now, it may very well happen (believe me...) that you fix a conflict
+in the wrong way. While =git rebase --abort= /should/ call =git rerere
+clear= to forget about the conflict resolution, I've had at least one
+instance of this not working as expected.
+
+The result is a rebase that looks done (no more conflicts), but is
+stuck in limbo (don't ask me why) and above all has the wrong
+resolution applied.
+
+The fix is to call =git rerere forget <pathspec>= with the path to the
+file under conflict. Sigh.
+
+#+begin_src conf
+    enabled = true
+    autoupdate = true
+#+end_src
+
+
+* The ~merge~ section
+:PROPERTIES:
+:ID:       cc40cc1c-18cd-42fb-a254-4c86606a22df
+:END:
+
+#+begin_src conf
+[merge]
+#+end_src
+
+=zdiff3= provides a much nicer visualisation of conflicting changes than
+the default styles.
+
+Basically, it'll drag all changes common to the two sides of the
+conflict up into the area above the conflict markers; check =man
+git-merge= for a decent example.
+
+What this means is that not only is the context of the base commit
+preserved (as done by =diff3=), but also the conflict surface is
+considerably reduced if both sides added the same change.
+
+#+begin_src conf
+    conflictstyle = zdiff3
+#+end_src
+
+* The ~filter~ section
+:PROPERTIES:
+:ID:       5c46311d-5249-4458-a418-71fb2b860c9c
+:END:
+
+** ~LFS~ filters
+:PROPERTIES:
+:ID:       f66d9bf0-fb46-4722-97d2-c132e2e8bc49
+:END:
+
+I honestly have no clue.
+
+#+begin_src conf
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+#+end_src
