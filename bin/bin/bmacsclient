@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# readahead
+cat -- "$@" >/dev/null 2>/dev/null &
+
+if ! emacsclient --create-frame "$@"; then
+    emacs "$@" &
+fi

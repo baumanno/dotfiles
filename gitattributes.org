@@ -1,0 +1,8 @@
+#+title: Gitattributes
+#+PROPERTY: header-args :tangle git/.config/git/attributes
+
+#+begin_src conf
+*.el    diff=elisp
+*.org   diff=org
+*.md    diff=markdown
+#+end_src

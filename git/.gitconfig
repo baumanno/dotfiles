@@ -6,7 +6,7 @@
 [credential]
     helper = cache
 [core]
-    editor = ~/bin/baumacsclient
+    editor = ~/bin/bmacsclient
     excludesfile = ~/.config/git/ignore
     attributesfile = ~/.config/git/attributes
 [alias]

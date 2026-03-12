@@ -1,0 +1,11 @@
+#+title: An Emacsclient wrapper
+#+PROPERTY: header-args :tangle bin/bin/bmacsclient :shebang "#!/usr/bin/env bash"
+
+#+begin_src bash
+# readahead
+cat -- "$@" >/dev/null 2>/dev/null &
+
+if ! emacsclient --create-frame "$@"; then
+    emacs "$@" &
+fi
+#+end_src

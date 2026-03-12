@@ -54,11 +54,11 @@ TODO: figure this out.
 #+end_src
 
 I want =Emacs= to intercept anything that requires editing, such as
-commits or rebase logs. The wrapper ~baumacsclient~ spins off an Emacs
+commits or rebase logs. The wrapper ~bmacsclient~ spins off an Emacs
 client if it exists, or boots Emacs.
 
 #+begin_src conf
-    editor = ~/bin/baumacsclient
+    editor = ~/bin/bmacsclient
     excludesfile = ~/.config/git/ignore
     attributesfile = ~/.config/git/attributes
 #+end_src
